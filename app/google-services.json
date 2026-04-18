@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "111956555742",
+    "project_id": "geonotify-4fb58",
+    "storage_bucket": "geonotify-4fb58.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111956555742:android:048cb90f42484ff224cf4f",
+        "android_client_info": {
+          "package_name": "com.example.geonotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Z2VvbBL69CFD1zB5QyobTkCbR1uSdV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

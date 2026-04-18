@@ -10,9 +10,11 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.geonotify.R
+import com.example.geonotify.authentication.AuthenticationActivity
 import com.example.geonotify.maps.MapsActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -43,28 +45,33 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         findViewById<MaterialButton>(R.id.btnEditGeofence).setOnClickListener {
-            Toast.makeText(this, "Edit Geofence coming soon", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Opening Geofence Management...", Toast.LENGTH_SHORT).show()
+            // In this design, the main page IS the geofence management page
         }
 
         findViewById<MaterialButton>(R.id.btnDeleteGeofence).setOnClickListener {
-            Toast.makeText(this, "Delete Geofence coming soon", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Opening Geofence Management...", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_profile -> {
-                Toast.makeText(this, "Profile Selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ProfileActivity::class.java))
             }
             R.id.nav_geofence -> {
                 // Already on main/geofence screen
                 drawerLayout.closeDrawer(GravityCompat.START)
             }
             R.id.nav_disable -> {
-                Toast.makeText(this, "Disable Features Selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, FeaturesActivity::class.java))
             }
             R.id.nav_logout -> {
-                Toast.makeText(this, "Logging out...", Toast.LENGTH_SHORT).show()
+                FirebaseAuth.getInstance().signOut()
+                Toast.makeText(this, "Logged out ✅", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, AuthenticationActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
                 finish()
             }
         }

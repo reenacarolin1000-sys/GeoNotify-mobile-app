@@ -17,6 +17,8 @@
 
         <activity android:name=".maps.MapsActivity" android:exported="false"/>
         <activity android:name=".ui.MainActivity" android:exported="false"/>
+        <activity android:name=".ui.ProfileActivity" android:exported="false"/>
+        <activity android:name=".ui.FeaturesActivity" android:exported="false"/>
         <activity android:name=".permissions.PermissionsActivity" android:exported="false"/>
         <activity android:name=".authentication.AuthenticationActivity" android:exported="false"/>
 
