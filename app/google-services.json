@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "111956555742",
+    "firebase_url": "https://geonotify-4fb58-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "geonotify-4fb58",
     "storage_bucket": "geonotify-4fb58.firebasestorage.app"
   },
