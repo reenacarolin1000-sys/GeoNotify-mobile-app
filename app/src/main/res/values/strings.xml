@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GeoNotify</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_geofence">Geofence</string>
+    <string name="menu_disable">Disable Features</string>
+    <string name="menu_logout">Logout</string>
+</resources>
