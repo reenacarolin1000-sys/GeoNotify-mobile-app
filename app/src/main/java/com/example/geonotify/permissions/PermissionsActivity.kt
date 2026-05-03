@@ -77,7 +77,7 @@ class PermissionsActivity : AppCompatActivity() {
     }
 
     private fun navigateToMain() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, com.example.geonotify.maps.MapsActivity::class.java))
         finish()
     }
 }

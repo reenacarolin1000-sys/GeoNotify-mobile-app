@@ -41,16 +41,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // Main Feature Buttons
         findViewById<MaterialButton>(R.id.btnCreateGeofence).setOnClickListener {
-            startActivity(Intent(this, MapsActivity::class.java))
+            val intent = Intent(this, MapsActivity::class.java)
+            intent.putExtra("MAP_MODE", "CREATE")
+            startActivity(intent)
         }
 
         findViewById<MaterialButton>(R.id.btnEditGeofence).setOnClickListener {
-            Toast.makeText(this, "Opening Geofence Management...", Toast.LENGTH_SHORT).show()
-            // In this design, the main page IS the geofence management page
+            val intent = Intent(this, MapsActivity::class.java)
+            intent.putExtra("MAP_MODE", "EDIT")
+            startActivity(intent)
         }
 
         findViewById<MaterialButton>(R.id.btnDeleteGeofence).setOnClickListener {
-            Toast.makeText(this, "Opening Geofence Management...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MapsActivity::class.java)
+            intent.putExtra("MAP_MODE", "DELETE")
+            startActivity(intent)
         }
     }
 

@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.geonotify.R
-import com.example.geonotify.permissions.PermissionsActivity
+import com.example.geonotify.ui.MainActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -84,7 +84,7 @@ class AuthenticationActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Login Successful 🎉", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, PermissionsActivity::class.java))
+                    startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {
                     Log.e("AUTH_DEBUG", "Login Failed", task.exception)
@@ -146,7 +146,7 @@ class AuthenticationActivity : AppCompatActivity() {
             .setValue(userMap)
             .addOnSuccessListener {
                 Toast.makeText(this, "Registration Successful 🎉", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, PermissionsActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
             .addOnFailureListener { e ->

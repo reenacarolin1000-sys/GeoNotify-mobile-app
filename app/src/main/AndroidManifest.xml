@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +25,21 @@
         <activity android:name=".ui.FeaturesActivity" android:exported="false"/>
         <activity android:name=".permissions.PermissionsActivity" android:exported="false"/>
         <activity android:name=".authentication.AuthenticationActivity" android:exported="false"/>
+
+        <service
+            android:name=".services.LocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <receiver
+            android:name=".services.geofence.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAX8SfLZ_MZd9uVI96ZCsDY4J0L1gJVSPU" />
 
         <activity android:name=".splash.SplashActivity" android:exported="true">
             <intent-filter>
